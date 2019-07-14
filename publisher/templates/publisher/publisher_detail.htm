@@ -1,0 +1,401 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ object.title }}</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  {% load static %}
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'lib/nivo-slider/css/nivo-slider.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/owl.carousel.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/owl.transitions.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/venobox/venobox.css' %}" rel="stylesheet">
+
+  <!-- Nivo Slider Theme -->
+  <link href="{% static 'css/nivo-slider-theme.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- Responsive Stylesheet File -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: eBusiness
+    Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+
+  <div id="preloader"></div>
+
+  <header>
+    <!-- header-area start -->
+    <div id="sticker" class="header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Brand -->
+                <a class="navbar-brand page-scroll sticky-logo" href="index.html">
+                  <h1><span>සියනෑ </span>පොත් මිතුරෝ</h1>
+                  <!-- Uncomment below if you prefer to use an image logo -->
+                  <!-- <img src="img/logo.png" alt="" title=""> -->
+								</a>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="active">
+                    <a class="page-scroll" href="#home">{{ object.title }}</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#portfolio">අපගේ පොත්</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#contact">සම්බන්ද වන්න</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- navbar-collapse -->
+            </nav>
+            <!-- END: Navigation -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header-area end -->
+  </header>
+  <!-- header end -->
+
+  <!-- Start Slider Area -->
+  <div id="home" class="slider-area">
+    <div class="bend niceties preview-2">
+      <div id="ensign-nivoslider" class="slides">
+        <img src="{% static 'img/slider/slider1.jpg' %}" alt="" title="#slider-direction-1" />
+      </div>
+
+      <!-- direction 1 -->
+      <div id="slider-direction-1" class="slider-direction slider-one">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="slider-content">
+                <!-- layer 1 -->
+                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                  <h1 class="title2">නිශාන්ත ප්‍රකාශන</h1>
+                </div>
+                <!-- layer 2 -->
+                <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                  <h2 class="title1">අපගේ සේවාවන් මිලදී ගන්න</h2>
+                </div>
+                <!-- layer 3 -->
+                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                  <a class="ready-btn right-btn page-scroll" href="#services">තවත් බලන්න</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Slider Area -->
+
+  <!-- Start portfolio Area -->
+  <div id="portfolio" class="portfolio-area area-padding fix">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="section-headline text-center">
+            <h2>අපගේ පොත්</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Start Portfolio -page -->
+        <div class="awesome-project-content">
+          {% for book in object.book_set.all %}
+          <!-- single-awesome-project start -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="{{ book.photo.url }}" alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="venobox" data-gall="myGallery" href="{{ book.photo.url }}">
+                      <h4>{{ book.name }}</h4>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- awesome-portfolio end -->
+  <!-- Start Testimonials -->
+  <div class="testimonials-area">
+    <div class="testi-inner area-padding">
+      <div class="testi-overly"></div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <!-- Start testimonials Start -->
+            <div class="testimonial-content text-center">
+              <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
+              <!-- start testimonial carousel -->
+              <div class="testimonial-carousel">
+                {% for gq in great_quote_list %}
+                <div class="single-testi">
+                  <div class="testi-text">
+                    <p>
+                      {{ gq.great_quote }}
+                    </p>
+                    <h6>{{ gq.narrator }}</h6>
+                  </div>
+                </div>
+                <!-- End single item -->
+                {% endfor %}
+              </div>
+            </div>
+            <!-- End testimonials end -->
+          </div>
+          <!-- End Right Feature -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Testimonials -->
+  <!-- Start contact Area -->
+  <div id="contact" class="contact-area">
+    <div class="contact-inner area-padding">
+      <div class="contact-overly"></div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>අප සමග සම්බන්ද වන්න</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Start contact icon column -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="contact-icon text-center">
+              <div class="single-icon">
+                <i class="fa fa-mobile"></i>
+                <p>
+                  දුරකතන අංකය: +94 717 411 527
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Start contact icon column -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="contact-icon text-center">
+              <div class="single-icon">
+                <i class="fa fa-envelope-o"></i>
+                <p>
+                  විද්‍යුත් තැපැල: siyanepothmithuro@gmail.com<br>
+                  <span>වෙබ් අඩවිය: www.siyanepothmithuro.com</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Start contact icon column -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="contact-icon text-center">
+              <div class="single-icon">
+                <i class="fa fa-map-marker"></i>
+                <p>
+                  පිහිටීම: නොම්බර: 127 ආදම් විදිය<br>
+                  <span> ගම්පහ, ශ්‍රී ලංකා.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <!-- Start Google Map -->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <!-- Start Map -->
+            <div style="width: 100%"><iframe width="100%" height="420" src="https://maps.google.com/maps?width=100%&amp;height=380&amp;hl=en&amp;q=colombo%20sri%20lanka+(Siyane%20Poth%20Mithuro)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Map a route</a></iframe></div>
+            <!-- End Map -->
+          </div>
+          <!-- End Google Map -->
+
+          <!-- Start  contact -->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form contact-form">
+              <div id="sendmessage">ඔබගේ පණිවිඩය යවන ලදී. ඔබට ස්තුතියි!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="ඔබේ නම..." data-rule="minlen:4" data-msg="කරුණාකර වචන 4කට වඩා භාවිතා කරන්න" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="ඔබේ විද්‍යුත් තැපෑළ..." data-rule="email" data-msg="කරුණාකර නිවැරදි විද්‍යුත් තැපැලක් භාවිතා කරන්න" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="මාතෘකාව" data-rule="minlen:4" data-msg="කරුණාකර වචන 8කට වඩා භාවිතා කරන්න" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="කරුනාකර ඔබේ පණිවිඩය ලියා එවන්න" placeholder="පණිවිඩය"></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><button type="submit">පණිවිඩය යවන්න</button></div>
+              </form>
+            </div>
+          </div>
+          <!-- End Left contact -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Contact Area -->
+
+  <!-- Start Footer bottom Area -->
+  <footer>
+    <div class="footer-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="footer-content">
+              <div class="footer-head">
+                <div class="footer-logo">
+                  <h2><span>සියනෑ </span>පොත් මිතුරෝ</h2>
+                </div>
+
+                <p>අපගේ සමාජ වෙබ් පිටුවට ගොස් අපව අනුගමනය කරන්න.</p>
+                <div class="footer-icons">
+                  <ul>
+                    <li>
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-google"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end single footer -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="footer-content">
+              <div class="footer-head">
+                <h4>තොරතුරු</h4>
+                <div class="footer-contacts">
+                  <p><span>දුරකතන අංකය:</span> +94 717 411 527</p>
+                  <p><span>විද්‍යුත් තැපැල:</span> siyanepothmithuro@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end single footer -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="footer-content">
+              <div class="footer-head">
+                <h4>අපගේ මතකයන්</h4>
+                <div class="flicker-img">
+                  <a href="#"><img src="{% static 'img/portfolio/1.jpg' %}" alt=""></a>
+                  <a href="#"><img src="{% static 'img/portfolio/2.jpg' %}" alt=""></a>
+                  <a href="#"><img src="{% static 'img/portfolio/3.jpg' %}" alt=""></a>
+                  <a href="#"><img src="{% static 'img/portfolio/4.jpg' %}" alt=""></a>
+                  <a href="#"><img src="{% static 'img/portfolio/5.jpg' %}" alt=""></a>
+                  <a href="#"><img src="{% static 'img/portfolio/6.jpg' %}" alt=""></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-area-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+              <p>
+                <strong>සියනෑ පොත් මිතුරෝ</strong>. &copy; සියලු හිමිකම් ඇවිරිණි.
+              </p>
+            </div>
+            <div class="credits">
+              <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+              -->
+              සඳරු රසන්ජන වෙතින් ❤️ සාදන ලදී.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'lib/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'lib/knob/jquery.knob.js' %}"></script>
+  <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'lib/parallax/parallax.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/nivo-slider/js/jquery.nivo.slider.js' %}" type="text/javascript"></script>
+  <script src="{% static 'lib/appear/jquery.appear.js' %}"></script>
+  <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static 'contactform/contactform.js' %}"></script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
